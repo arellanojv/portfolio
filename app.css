@@ -147,6 +147,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root{
+  --mainTextColor-light:#000;
+  --secondaryTextColor-light:rgb(51 51 51);
+  --mainLinkColor-light:#0da2b8;
+  --mainBorderColor-light:rgb(218, 218, 218);
+  --mainBgColor-light:rgb(249, 250,251);
+
+  --mainTextColor-dark:#fff;
+  --secondaryTextColor-dark:#adb0b1;
+  --mainLinkColor-dark:rgb(30, 190,214);
+  --mainBorderColor-dark:#2b3031;
+  --mainBgColor-dark:#131415;
+  
+  --mainTextColor:var(--mainTextColor-dark);
+  --secondaryTextColor:var(--secondaryTextColor-dark);
+  --mainLinkColor:var(--mainLinkColor-dark);
+  --mainBorderColor:var(--mainBorderColor-dark);
+  --mainBgColor:var(--mainBgColor-dark);
+
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  color: var(--mainTextColor-light);
+}
+
+p, span, li{
+  color: var(--secondaryTextColor-light);
+  font-size: 1em;
+}
+
+li{
+  line-height: 1.9em;
+}
+
 p {
   line-height: 32px;
 }
@@ -165,6 +202,7 @@ a.link {
   font-weight: 700;
   color: #605cec;
 }
+
 
 .wrapper {
   display: flex;
@@ -274,7 +312,7 @@ main section {
   padding: 32px 0;
 }
 
-main section h2 {
+main section h1 {
   color: #000000;
   font-family: 'Poppins', sans-serif;
   font-size: 48px;
@@ -361,7 +399,7 @@ main section.about h2 span {
 }
 
 main section.about img {
-  max-width: 70%;
+  max-width: 30%;
 }
 
 main section.about p:last-of-type {
@@ -495,6 +533,107 @@ main section.contact button:hover {
   }
 }
 
+/* Work history cards */
+.card--work-history{
+  border-left: 1px solid var(--mainBorderColor);
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-left: 2em;
+}
+
+.line-break{
+  background-color: var(--mainBorderColor);
+  height: 1px;
+}
+
+/* Pop up image */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
 @media (max-width: 700px) {
   main section.portfolio .photos {
     display: inline-grid;
@@ -503,6 +642,7 @@ main section.contact button:hover {
     align-items: center;
   }
 }
+
 
 @media (min-width: 1400px) {
   nav {
