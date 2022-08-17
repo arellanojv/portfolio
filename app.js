@@ -20,15 +20,40 @@ onClickNavHandler()
 
 document.getElementById('year').innerHTML = new Date().getFullYear()
 
+this.myImages = document.querySelector(".image-container")
+
+console.log("Images", this.myImages)
+this.myImages.addEventListener("click", e => this.clickHandler(e));
+
+// clickHandler(e) {
+//   if (e.target.classList.contains("my-image") {
+//     // this.showModal(e)
+//     alert(123);
+//   } 
+// }
+
+
+// showModal() {
+//   alert(123);
+// }
+
+
+// events() {
+//   this.myNotes.addEventListener("click", e => this.clickHandler(e))
+//   document.querySelector(".submit-note").addEventListener("click", () => this.createNote())
+// }
+
+
 // Get the modal
-console.log("i am the intro");
 var modal = document.getElementById("myModal");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementsByClassName("my-images")[1]
+const img = document.getElementsByClassName("my-images")
 // this.myNotes.addEventListener("click", e => this.clickHandler(e))
 var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
+
+
 img.onclick = function(){
   console.log("i am clicked");
   modal.style.display = "block";

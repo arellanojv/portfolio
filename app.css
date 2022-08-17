@@ -120,7 +120,8 @@ body {
 }
 ol,
 ul {
-  list-style: none;
+  padding-left: 2rem;
+  list-style: disc;
 }
 blockquote,
 q {
@@ -254,7 +255,9 @@ nav a.author {
   font-size: 12px;
 }
 
-nav ul {
+nav ul, .home ul {
+  list-style: none;
+  padding: 0;
   margin-bottom: 48px;
 }
 
@@ -292,6 +295,19 @@ nav ul li:last-of-type {
   margin-bottom: 0;
 }
 
+nav #year {
+  color: #999999;
+}
+
+nav .built-w-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.built-w-list li img {
+  width: 25px;
+}
+
 /** MAIN **/
 main {
   display: flex;
@@ -312,14 +328,20 @@ main section {
   padding: 32px 0;
 }
 
-main section h1 {
+main section h1, h2  {
   color: #000000;
   font-family: 'Poppins', sans-serif;
-  font-size: 48px;
+  font-size: 3.052rem;
   font-weight: 900;
   text-transform: uppercase;
-  margin-bottom: 32px;
+  margin-bottom: 1rem;
 }
+
+main section h2 {
+  font-size: 1.25rem !important;  
+  font-weight: 400;
+}
+
 
 main section p {
   color: #383838;
@@ -330,7 +352,7 @@ main section:not(.home) {
   display: none;
 }
 
-main section img {
+main section img.swiggly {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -342,7 +364,7 @@ main section img {
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
 }
 
-main section img:hover {
+main section img.swiggly:hover {
   border: 10px solid #dadadabf;
 }
 
@@ -391,7 +413,8 @@ main section.about .large-image {
 }
 
 main section.about h2 {
-  font-size: 40px;
+  font-size: 2.441rem;
+  text-transform: uppercase;
 }
 
 main section.about h2 span {
@@ -404,6 +427,37 @@ main section.about img {
 
 main section.about p:last-of-type {
   margin-bottom: 32px;
+}
+
+main section.about .skills-container { 
+  margin-bottom: 1rem;
+}
+
+main section.about .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+main section.about .skills > * {
+  flex: 0 1 45%;
+  border: solid #dadadabf 1px;
+  background-color: #dadadabf;
+}
+
+main section.about .skills span {
+  display: flex;
+  color: inherit;
+  justify-content: center;
+  padding-top: 5px;
+  text-transform: capitalize;
+}
+
+main section.about .skills img {
+  background-color: white;
+  padding: 5px;
+  width: 30px;
+  float: left;
 }
 
 /** MAIN: PORTFOLIO **/
@@ -640,6 +694,12 @@ main section.contact button:hover {
     grid-template-columns: auto;
     justify-items: center;
     align-items: center;
+  }
+}
+
+@media (min-width: 700px) {
+  main section.about .skills > * {
+    flex: 0 1 30%;
   }
 }
 
