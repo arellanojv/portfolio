@@ -211,6 +211,10 @@ a.link {
   min-height: 100%;
 }
 
+.lb-caption {
+  color: #ffffff;
+}
+
 /** NAV **/
 nav {
   display: flex;
@@ -335,6 +339,7 @@ main section h1, h2  {
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  line-height: 3rem;
 }
 
 main section h2 {
@@ -350,6 +355,11 @@ main section p {
 
 main section:not(.home) {
   display: none;
+}
+
+main a {
+  color: #605cec;
+  text-decoration: none;
 }
 
 main section img.swiggly {
@@ -461,9 +471,8 @@ main section.about .skills img {
 }
 
 /** MAIN: PORTFOLIO **/
-main section.portfolio {
-  flex-direction: column;
-  justify-content: center;
+main section.portfolio .card-portfolio {
+  font-size: 0.8rem;
 }
 
 main section.portfolio img {
@@ -476,6 +485,63 @@ main section.portfolio .photos {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   overflow-y: auto;
+}
+
+
+main section.portfolio .project {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+main section.portfolio .project .inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+main section.portfolio .project .inner small {
+  font-weight: 100;
+}
+
+main section.portfolio .project .inner > * {
+  flex-basis: 100%;
+  /* border: solid blue; */
+}
+
+/* main section.portfolio .project > *:nth-child(odd){ 
+  flex: 1 1 40%;
+}
+
+main section.portfolio .project > *:nth-child(even){ 
+  flex: 1 1 60%;
+} */
+
+main section.portfolio .project > * {
+  padding: 1rem;
+}
+
+main section.portfolio .project > *:nth-child(1){ 
+  flex: 1 1 70%;
+  border-left: 1px solid var(--mainBorderColor);
+}
+
+main section.portfolio .project > *:nth-child(2){ 
+  flex: 1 1 30%;
+  border-left: 1px solid var(--mainBorderColor);
+  /* min-width: 15ch; */
+}
+
+main section.portfolio .project strong {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+
+main section.portfolio h1 {
+  font-size: 1.25rem;
 }
 
 /** MAIN: CONTACT **/
@@ -570,6 +636,7 @@ main section.contact button:hover {
   nav > a {
     display: none;
   }
+  
   main section {
     padding: 32px;
   }
